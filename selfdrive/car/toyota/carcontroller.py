@@ -352,7 +352,7 @@ class CarController(object):
 #for turn signal needed
 if ((turn_signal_needed > 0) and (frame % 2 == 0)):
           signal_msg = toyotacan.create_turnlever_command(
-            turnIndLvr_Stat=turn_signal_needed)
+            TurnIndLvr_Stat=turn_signal_needed)
           # Send this CAN msg first because it is racing against the real stalk.
           can_sends.insert(0, signal_msg)
 
