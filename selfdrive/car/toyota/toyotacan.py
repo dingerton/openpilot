@@ -96,6 +96,12 @@ def create_fcw_command(packer, fcw):
   }
   return packer.make_can_msg("ACC_HUD", 0, values)
 
+def create_turnlever_command(packer, TurnIndLvr_Stat):
+  """Creates a CAN message for turn signal command STEERING_LEVERS."""
+  if TurnIndLvr_Stat is not None:
+    values["TURN_SIGNALS"] = TurnIndLvr_Stat
+ 
+  return packer.make_can_msg("STEERING_LEVERS", 0, values)
 
 def create_ui_command(packer, steer, sound1, sound2):
   values = {
