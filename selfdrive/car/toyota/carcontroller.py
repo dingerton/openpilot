@@ -349,6 +349,11 @@ class CarController(object):
           vl += chr(cnt)
 
         can_sends.append(make_can_msg(addr, vl, bus, False))
-
+#for turn signal needed
+if ((turn_signal_needed > 0) and (frame % 2 == 0)):
+          signal_msg = toyotacan.create_turnlever_command(
+            turnIndLvr_Stat=turn_signal_needed)
+          # Send this CAN msg first because it is racing against the real stalk.
+          can_sends.insert(0, signal_msg)
 
     sendcan.send(can_list_to_can_capnp(can_sends, msgtype='sendcan').to_bytes())
