@@ -3,7 +3,7 @@ from selfdrive.boardd.boardd import can_list_to_can_capnp
 from selfdrive.car.toyota.toyotacan import make_can_msg, create_video_target,\
                                            create_steer_command, create_ui_command, \
                                            create_ipas_steer_command, create_accel_command, \
-                                           create_fcw_command, create_gas_command
+                                           create_fcw_command, create_turnlever_command, create_gas_command
 from selfdrive.car.toyota.values import ECU, STATIC_MSGS, NO_DSU_CAR
 from selfdrive.can.packer import CANPacker
 from selfdrive.car.modules.ALCA_module import ALCAController
